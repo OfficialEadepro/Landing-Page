@@ -63,7 +63,7 @@ const Gallery = () => {
                         variants={itemVariants}
                         className="bg-white rounded-xl overflow-hidden shadow-sm border border-secondary/5 group hover:shadow-lg transition-shadow"
                     >
-                        <div className="relative h-56 overflow-hidden">
+                        <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
                             <img alt="Single Storey" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="/images/Single Storey.webp" />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                         </div>
@@ -82,7 +82,7 @@ const Gallery = () => {
                         variants={itemVariants}
                         className="bg-white rounded-xl overflow-hidden shadow-sm border border-secondary/5 group hover:shadow-lg transition-shadow"
                     >
-                        <div className="relative h-56 overflow-hidden">
+                        <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
                             <img alt="Double Storey" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="/images/Double Storey.webp" />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                         </div>
@@ -101,7 +101,7 @@ const Gallery = () => {
                         variants={itemVariants}
                         className="bg-white rounded-xl overflow-hidden shadow-sm border border-secondary/5 group hover:shadow-lg transition-shadow"
                     >
-                        <div className="relative h-56 overflow-hidden">
+                        <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
                             <img alt="Luxury Units" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="/images/Bungalow.webp" />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                         </div>

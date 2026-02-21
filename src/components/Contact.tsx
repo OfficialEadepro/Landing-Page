@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     return (
         <>
-            <section className="relative w-full h-[100vh] text-center overflow-hidden">
+            <section className="relative w-full min-h-[400px] h-[60vh] md:h-[100vh] text-center overflow-hidden">
                 <motion.img
                     initial={{ scale: 1.1 }}
                     whileInView={{ scale: 1 }}
@@ -11,7 +11,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     src="/images/Furniture.webp"
                     alt="Furniture Package"
-                    className="w-full h-full object-cover block"
+                    className="w-full h-full object-cover object-[center_top] md:object-center block"
                 />
 
                 <div className="absolute inset-x-0 top-0 flex items-start justify-end pt-16 px-12 md:px-24">

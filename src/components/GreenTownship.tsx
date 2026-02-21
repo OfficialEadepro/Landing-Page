@@ -38,13 +38,13 @@ const GreenTownship = () => {
     };
 
     return (
-        <section className="relative overflow-hidden min-h-screen flex items-center py-16 md:py-0 bg-secondary">
+        <section className="relative overflow-hidden py-24 md:py-0 md:min-h-screen flex items-center bg-secondary">
             {/* Background Image - Clean and sharp, no scale animation to avoid blurriness */}
             <div className="absolute inset-0 z-0">
                 <img
                     src="/images/Greentownship.jpg"
                     alt="Green township park and community"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-[center_top] md:object-center"
                 />
                 {/* Dark gradient for better text readability without making everything dull */}
                 <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/30" />

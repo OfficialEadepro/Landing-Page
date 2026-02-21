@@ -109,7 +109,7 @@ const Features = () => {
                         >
                             {/* Visual Panel */}
                             <div className="w-full md:w-5/12 flex-shrink-0">
-                                <div className={`relative rounded-3xl ${feature.bgColor} border ${feature.borderColor} overflow-hidden flex flex-col items-center justify-center aspect-[4/3] text-center shadow-sm`}>
+                                <div className={`relative rounded-3xl ${feature.bgColor} border ${feature.borderColor} overflow-hidden flex flex-col items-center justify-center aspect-square md:aspect-[4/3] text-center shadow-sm`}>
                                     {feature.image ? (
                                         <>
                                             <img src={feature.image} alt={feature.headline} className="w-full h-full object-cover" />

@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div id="home" className="relative h-[100vh] w-full overflow-hidden">
+        <div id="home" className="relative min-h-[600px] h-[80vh] md:min-h-0 md:h-screen w-full overflow-hidden">
             <motion.img
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 src="/images/Park Header.webp"
                 alt="Klemeru Park Header"
-                className="w-full h-full object-cover block"
+                className="w-full h-full object-cover object-[center_top] md:object-center block"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/30 to-transparent"></div>
 
