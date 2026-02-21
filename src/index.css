@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #B38F48;
+    --color-secondary: #1A1A1A;
+    --color-cream: #F2F0E4;
+    --color-luxury-green: #4ade80;
+    --color-apple-green: #8ED129;
+    --color-premium-sage: #90BC8C;
+
+    --font-display: "Playfair Display", serif;
+    --font-elegant: "Cinzel", serif;
+    --font-premium: "Bodoni Moda", serif;
+    --font-body: "Lato", sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        @apply bg-cream antialiased text-secondary;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+    }
+
+    ::selection {
+        @apply bg-primary/30 text-secondary;
+    }
+}
