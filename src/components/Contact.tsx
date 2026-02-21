@@ -25,7 +25,7 @@ const Contact = () => {
                         <h2 className="font-display font-bold text-xl md:text-3xl text-white mb-4 leading-tight drop-shadow-sm">
                             Limited Time Offer
                         </h2>
-                        <p className="text-white font-medium text-xs md:text-sm leading-relaxed drop-shadow-sm">
+                        <p className="text-white font-medium text-[0.65rem] sm:text-xs md:text-sm leading-relaxed drop-shadow-sm tracking-tight">
                             Reward your vision. Book your unit now to unlock a:<br />
                             <span className="text-white font-bold italic text-base md:text-lg drop-shadow-sm text-premium-sage">Complimentary Semi-Furnished Package*</span>
                         </p>
