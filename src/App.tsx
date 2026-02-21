@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
-import GreenTownship from './components/GreenTownship';
+// import GreenTownship from './components/GreenTownship';
 import Features from './components/Features';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Hero />
       <PainPoints />
-      <GreenTownship />
+      {/* <GreenTownship /> */}
       <Features />
       <Gallery />
       <Contact />
