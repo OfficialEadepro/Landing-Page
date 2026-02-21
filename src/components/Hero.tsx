@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div id="home" className="relative min-h-[300px] h-[45vh] md:min-h-0 md:h-screen w-full overflow-hidden">
+        <div id="home" className="relative h-[100vh] w-full overflow-hidden">
             <motion.img
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
