@@ -14,20 +14,20 @@ const Contact = () => {
                     className="w-full h-full object-cover object-center block"
                 />
 
-                <div className="absolute inset-0 flex items-center md:items-start justify-end p-4 sm:p-8 md:pt-16 md:px-24">
+                <div className="absolute inset-0 flex items-center md:items-start justify-end p-2 sm:p-4 md:pt-16 md:px-24">
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="max-w-[75%] sm:max-w-sm md:max-w-md text-right bg-secondary/30 md:bg-transparent p-3 md:p-0 rounded-lg md:rounded-none backdrop-blur-sm md:backdrop-blur-none"
+                        className="max-w-[60%] sm:max-w-sm md:max-w-md text-right drop-shadow-md"
                     >
-                        <h2 className="font-display font-bold text-lg sm:text-xl md:text-3xl text-white mb-2 md:mb-4 leading-tight drop-shadow-sm">
+                        <h2 className="font-display font-bold text-sm sm:text-base md:text-3xl text-white mb-1 md:mb-4 leading-tight drop-shadow-lg">
                             Limited Time Offer
                         </h2>
-                        <p className="text-white font-medium text-[0.6rem] sm:text-[0.65rem] md:text-sm leading-relaxed drop-shadow-sm tracking-tight">
+                        <p className="text-white font-medium text-[0.55rem] sm:text-[0.65rem] md:text-sm leading-snug drop-shadow-md tracking-tight">
                             Reward your vision. Book your unit now to unlock a:<br />
-                            <span className="text-white font-bold italic text-sm sm:text-base md:text-lg drop-shadow-sm text-premium-sage">Complimentary Semi-Furnished Package*</span>
+                            <span className="text-white font-bold italic text-[0.65rem] sm:text-sm md:text-lg drop-shadow-md text-premium-sage">Complimentary Semi-Furnished Package*</span>
                         </p>
                     </motion.div>
                 </div>
