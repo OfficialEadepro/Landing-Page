@@ -64,7 +64,7 @@ const Gallery = () => {
                         className="bg-white rounded-xl overflow-hidden shadow-sm border border-secondary/5 group hover:shadow-lg transition-shadow"
                     >
                         <div className="relative h-64 sm:h-56 md:h-64 overflow-hidden">
-                            <img alt="Single Storey" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="/images/Single Storey.webp" />
+                            <img alt="Single Storey" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="/images/Single Storey House.png" />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                         </div>
                         <div className="p-6">
