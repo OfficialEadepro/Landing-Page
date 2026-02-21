@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Contact = () => {
     return (
         <>
-            <section className="relative w-full min-h-[400px] h-[60vh] md:h-[100vh] text-center overflow-hidden">
+            <section className="relative w-full min-h-[300px] h-[45vh] lg:h-[100vh] text-center overflow-hidden">
                 <motion.img
                     initial={{ scale: 1.1 }}
                     whileInView={{ scale: 1 }}
