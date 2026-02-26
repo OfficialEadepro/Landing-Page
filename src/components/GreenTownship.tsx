@@ -66,7 +66,7 @@ const GreenTownship = () => {
                             The Current Housing Trend
                         </span>
 
-                        <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6">
+                        <h2 className="text-white text-3xl md:text-5xl font-display font-bold leading-tight mb-6">
                             What is <br /><span className="text-primary italic">Green Township?</span>
                         </h2>
 

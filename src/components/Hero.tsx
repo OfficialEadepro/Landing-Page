@@ -22,10 +22,10 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-2xl md:text-5xl font-display font-bold text-white mb-6 leading-[1.1]"
+                        className="text-2xl md:text-6xl font-display font-bold text-white mb-6 leading-[1.1]"
                     >
-                        Ipoh New Project <br />
-                        <span className="text-primary italic drop-shadow-lg">Upcoming New Township</span>
+                        Ipoh New Project — <br />
+                        <span className="text-primary italic drop-shadow-lg">KLEMERU</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
