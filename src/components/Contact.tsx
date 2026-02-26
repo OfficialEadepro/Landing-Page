@@ -197,7 +197,7 @@ const Contact = () => {
                                         }
 
                                         const message = `Hi, I would like to book an appointment.\nName: ${name}\nInterest: ${interest}\nDate: ${date}\nTime: ${time}`;
-                                        const whatsappUrl = `https://wa.me/60123456789?text=${encodeURIComponent(message)}`;
+                                        const whatsappUrl = `https://wa.me/60165500271?text=${encodeURIComponent(message)}`;
                                         window.open(whatsappUrl, '_blank');
                                     }}
                                 >

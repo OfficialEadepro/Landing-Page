@@ -42,7 +42,7 @@ const Hero = () => {
                         className="w-full max-w-sm"
                     >
                         <a
-                            href="https://wa.me/60123456789?text=I%20am%20Interest%20in%20Klemeru"
+                            href="https://wa.me/60165500271?text=I%20am%20Interest%20in%20Klemeru"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-premium-sage hover:bg-[#7da878] text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-[1.05] active:scale-95 w-full uppercase tracking-wider text-sm flex items-center justify-center"
