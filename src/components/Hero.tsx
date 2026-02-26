@@ -22,19 +22,18 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-2xl md:text-6xl font-display font-bold text-white mb-6 leading-[1.1]"
+                        className="text-2xl md:text-6xl font-display font-bold text-white mb-4 leading-[1.1]"
                     >
-                        Ipoh New Project — <br />
-                        <span className="text-primary italic drop-shadow-lg">KLEMERU</span>
+                        Ipoh New Project — <span className="text-primary italic drop-shadow-lg">Klemeru</span>
                     </motion.h1>
-                    <motion.p
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-white/90 mb-8 font-light text-sm md:text-lg max-w-sm mx-auto"
+                        className="text-white/90 mb-8 font-display font-medium text-lg md:text-2xl max-w-2xl mx-auto"
                     >
-                        Sustainability Begins from Home
-                    </motion.p>
+                        Upcoming New Township
+                    </motion.h2>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
