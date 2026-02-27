@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MessageCircle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -37,17 +37,40 @@ const Footer = () => {
                         </p>
 
                         <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="mb-8"
+                            whileHover="hover"
+                            initial="initial"
+                            className="mb-8 relative group"
                         >
+                            {/* Animated Background Pulse */}
+                            <motion.div
+                                animate={{
+                                    scale: [1, 1.05, 1],
+                                    opacity: [0.5, 0.8, 0.5],
+                                }}
+                                transition={{
+                                    duration: 2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="absolute inset-0 bg-primary/20 rounded-full blur-md"
+                            />
+
                             <a
                                 href="https://eadepro.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-block bg-premium-sage hover:bg-[#7da878] text-white font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm uppercase tracking-wider"
+                                className="relative flex items-center space-x-2 bg-primary hover:bg-[#c4a059] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors text-sm uppercase tracking-widest overflow-hidden"
                             >
-                                Visit Website
+                                <span>Learn More</span>
+                                <motion.div
+                                    variants={{
+                                        initial: { x: 0 },
+                                        hover: { x: 5 }
+                                    }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </motion.div>
                             </a>
                         </motion.div>
 
