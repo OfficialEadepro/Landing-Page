@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
 // import GreenTownship from './components/GreenTownship';
 import Features from './components/Features';
+import AboutUs from './components/AboutUs';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
       <PainPoints />
       {/* <GreenTownship /> */}
       <Features />
+      <AboutUs />
       <Gallery />
       <Contact />
       <Footer />
