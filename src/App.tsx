@@ -6,7 +6,6 @@ import PainPoints from './components/PainPoints';
 import Features from './components/Features';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-import AboutUsRefined from './components/AboutUsRefined';
 import Footer from './components/Footer';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
       <Features />
       <Gallery />
       <Contact />
-      <AboutUsRefined />
       <Footer />
     </motion.div>
   );

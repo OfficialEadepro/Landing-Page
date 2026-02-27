@@ -36,6 +36,21 @@ const Footer = () => {
                             Eadepro crafts spaces that connect people, inspire lifestyles, and embrace sustainability.
                         </p>
 
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="mb-8"
+                        >
+                            <a
+                                href="https://eadepro.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block bg-premium-sage hover:bg-[#7da878] text-white font-bold py-2.5 px-6 rounded-full shadow-md transition-colors text-sm uppercase tracking-wider"
+                            >
+                                Visit Website
+                            </a>
+                        </motion.div>
+
                         <div className="flex items-center space-x-4 mb-4">
                             <span className="font-display font-bold text-primary text-lg">Follow Us:</span>
                             <div className="flex space-x-3">
