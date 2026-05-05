@@ -40,7 +40,7 @@ const Gallery = () => {
                     </motion.span>
                     <h2 className="text-3xl md:text-5xl font-display font-bold text-secondary leading-tight">
                         Join the Upcoming <br className="hidden md:block" />
-                        <span className="text-primary font-body font-normal">New Township.</span>
+                        <span className="text-primary">New Township.</span>
                     </h2>
                     <motion.div
                         initial={{ width: 0 }}
