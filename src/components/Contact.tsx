@@ -1,4 +1,13 @@
 import { motion } from 'framer-motion';
+import { Check } from 'lucide-react';
+import LocationMap from './LocationMap';
+
+const packageItems = [
+    'Wet kitchen cabinets',
+    'Dry kitchen cabinets',
+    'Master bedroom built-in wardrobe',
+    'Secondary bedroom built-in wardrobe',
+];
 
 const Contact = () => {
     return (
@@ -32,6 +41,102 @@ const Contact = () => {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Semi-Furnished Package Details */}
+            <section className="px-6 py-16 bg-white overflow-hidden">
+                <div className="max-w-5xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-center mb-12"
+                    >
+                        <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">What's Included</span>
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary leading-tight">
+                            Your <span className="text-primary">Semi-Furnished Package</span>
+                        </h2>
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 80 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="h-1 bg-primary mx-auto mt-6 rounded-full"
+                        />
+                    </motion.div>
+
+                    {/* Package Items */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
+                    >
+                        {packageItems.map((item) => (
+                            <div key={item} className="flex items-start gap-3 p-4 rounded-xl bg-cream/50 border border-secondary/5">
+                                <Check className="w-4 h-4 text-premium-sage mt-0.5 flex-shrink-0" />
+                                <span className="text-sm text-secondary/80 font-medium leading-snug">{item}</span>
+                            </div>
+                        ))}
+                    </motion.div>
+
+                    {/* 5-Image Gallery — full images, no cropping */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="flex flex-col gap-3"
+                    >
+                        {/* Row 1: master bedroom full width */}
+                        <div className="rounded-2xl overflow-hidden">
+                            <img
+                                src="/images/Furniture/4.jpeg"
+                                alt="Master Bedroom"
+                                className="w-full h-auto block"
+                            />
+                        </div>
+                        {/* Row 2: dining + dry kitchen */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div className="rounded-2xl overflow-hidden">
+                                <img
+                                    src="/images/Furniture/1.jpeg"
+                                    alt="Dining Area"
+                                    className="w-full h-auto block"
+                                />
+                            </div>
+                            <div className="rounded-2xl overflow-hidden">
+                                <img
+                                    src="/images/Furniture/2.jpeg"
+                                    alt="Dry Kitchen"
+                                    className="w-full h-auto block"
+                                />
+                            </div>
+                        </div>
+                        {/* Row 3: kitchen + secondary bedroom */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div className="rounded-2xl overflow-hidden">
+                                <img
+                                    src="/images/Furniture/3.jpeg"
+                                    alt="Kitchen"
+                                    className="w-full h-auto block"
+                                />
+                            </div>
+                            <div className="rounded-2xl overflow-hidden">
+                                <img
+                                    src="/images/Furniture/5.jpeg"
+                                    alt="Secondary Bedroom"
+                                    className="w-full h-auto block"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    <p className="text-center text-xs text-secondary/40 mt-6">*Semi-furnished package subject to terms and conditions. Images are for illustration purposes only.</p>
+                </div>
+            </section>
+
+            <LocationMap />
 
             <section id="contact" className="px-8 py-16 overflow-hidden">
                 <div className="max-w-xl mx-auto">
@@ -179,7 +284,6 @@ const Contact = () => {
                                     type="button"
                                     onClick={() => {
                                         const name = (document.getElementById('name') as HTMLInputElement).value;
-                                        // Get selected interest from radio buttons
                                         const interestRadio = document.querySelector('input[name="interest"]:checked') as HTMLInputElement;
                                         const interest = interestRadio ? interestRadio.value : '';
 

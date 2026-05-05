@@ -34,7 +34,7 @@ const PainPoints = () => {
                 >
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Reality Check</span>
                     <h2 className="text-3xl md:text-5xl font-display font-bold text-secondary mb-4 leading-tight">
-                        Pain of the Current House
+                        The Current Reality of Homes in Ipoh
                     </h2>
                     <div className="h-1 w-20 bg-premium-sage mx-auto rounded-full"></div>
                 </motion.div>

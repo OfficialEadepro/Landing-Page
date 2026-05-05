@@ -74,6 +74,10 @@ const Gallery = () => {
                                 <span className="flex items-center"><BedDouble className="text-primary w-4 h-4 mr-2" /> 4 Beds</span>
                                 <span className="flex items-center"><Bath className="text-primary w-4 h-4 mr-2" /> 2 Baths</span>
                             </div>
+                            <div className="mt-3 pt-3 border-t border-secondary/10">
+                                <p className="text-[0.6rem] text-secondary/50 uppercase tracking-widest font-bold mb-0.5">Est. Installment From</p>
+                                <p className="text-primary font-display font-bold text-xl">RM 1,700 <span className="text-xs text-secondary/50 font-normal font-body">/month</span></p>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -93,6 +97,10 @@ const Gallery = () => {
                                 <span className="flex items-center"><BedDouble className="text-primary w-4 h-4 mr-2" /> 4 Beds</span>
                                 <span className="flex items-center"><Bath className="text-primary w-4 h-4 mr-2" /> 3 Baths</span>
                             </div>
+                            <div className="mt-3 pt-3 border-t border-secondary/10">
+                                <p className="text-[0.6rem] text-secondary/50 uppercase tracking-widest font-bold mb-0.5">Est. Installment From</p>
+                                <p className="text-primary font-display font-bold text-xl">RM 2,200 <span className="text-xs text-secondary/50 font-normal font-body">/month</span></p>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -111,8 +119,28 @@ const Gallery = () => {
                             <div className="text-xs text-secondary/60 font-bold uppercase tracking-widest border-t border-secondary/10 pt-4">
                                 Premium layouts available
                             </div>
+                            <div className="mt-3 pt-3 border-t border-secondary/10">
+                                <p className="text-[0.6rem] text-secondary/50 uppercase tracking-widest font-bold mb-0.5">Est. Installment From</p>
+                                <p className="text-primary font-display font-bold text-xl">RM 3,000 <span className="text-xs text-secondary/50 font-normal font-body">/month</span></p>
+                            </div>
                         </div>
                     </motion.div>
+                </motion.div>
+
+                {/* Brochure CTA */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="text-center mt-12"
+                >
+                    <a
+                        href="#contact"
+                        className="inline-block bg-primary hover:bg-[#c4a059] text-white font-bold py-4 px-10 rounded-full shadow-lg uppercase tracking-widest text-sm transition-colors"
+                    >
+                        Get Klemeru Ipoh Brochure
+                    </a>
                 </motion.div>
             </div>
         </section>

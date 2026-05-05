@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import PainPoints from './components/PainPoints';
-// import GreenTownship from './components/GreenTownship';
-import Features from './components/Features';
 import Gallery from './components/Gallery';
+import PainPoints from './components/PainPoints';
+import Features from './components/Features';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -18,10 +17,9 @@ function App() {
     >
       <Navbar />
       <Hero />
-      <PainPoints />
-      {/* <GreenTownship /> */}
-      <Features />
       <Gallery />
+      <PainPoints />
+      <Features />
       <Contact />
       <Footer />
     </motion.div>
@@ -29,4 +27,3 @@ function App() {
 }
 
 export default App;
-
