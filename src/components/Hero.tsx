@@ -22,9 +22,9 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-2xl md:text-5xl font-display font-bold text-white mb-4 leading-[1.1]"
+                        className="text-2xl md:text-5xl font-body uppercase tracking-widest text-white mb-4 leading-[1.1]"
                     >
-                        Ipoh New Project — <span className="italic drop-shadow-lg">Klemeru</span>
+                        Ipoh New Project — <span className="drop-shadow-lg">Klemeru</span>
                     </motion.h1>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
