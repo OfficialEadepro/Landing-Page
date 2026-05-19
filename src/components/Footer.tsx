@@ -101,7 +101,7 @@ const Footer = () => {
                         duration: 2,
                         repeat: Infinity
                     }}
-                    href="https://wa.me/60165500271"
+                    href={`https://wa.me/60165500271?text=${encodeURIComponent("Hi, I saw your landing page on Google and I'm interested in Klemeru")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5a] text-white p-4 rounded-full shadow-2xl transition-transform active:scale-95 hover:scale-110"

@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import LocationMap from './LocationMap';
+
+const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJFQWHxq4_mBzG2gb89-wDJHfRR7nqM22yCh6XsJyX34MFXCBIC0NFTJ89JRuF6DKz4g/exec';
 
 const packageItems = [
     'Wet kitchen cabinets',
@@ -10,6 +13,61 @@ const packageItems = [
 ];
 
 const Contact = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = async () => {
+        const name = (document.getElementById('name') as HTMLInputElement).value.trim();
+        const phone = (document.getElementById('phone') as HTMLInputElement).value.trim();
+        const interestRadio = document.querySelector('input[name="interest"]:checked') as HTMLInputElement;
+        const interest = interestRadio ? interestRadio.value : '';
+        const date = (document.getElementById('date') as HTMLInputElement).value;
+        const time = (document.getElementById('time') as HTMLSelectElement).value;
+
+        if (!name) {
+            alert("Please enter your full name.");
+            return;
+        }
+
+        if (!phone) {
+            alert("Please enter your phone number.");
+            return;
+        }
+
+        if (!interest) {
+            alert("Please select an interested property.");
+            return;
+        }
+
+        if (!date || !time) {
+            alert("Please select both a date and time for your appointment.");
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const formData = new FormData();
+            formData.append('fullName', name);
+            formData.append('phoneNumber', phone);
+            formData.append('property', interest);
+            formData.append('preferredDate', date);
+            formData.append('preferredTime', time);
+
+            await fetch(LEAD_ENDPOINT, {
+                method: 'POST',
+                body: formData,
+            });
+        } catch (error) {
+            console.error('Lead submission failed:', error);
+        }
+
+        const message = `Hi, I saw your landing page on Google and I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\nDate: ${date}\nTime: ${time}`;
+        const whatsappUrl = `https://wa.me/60165500271?text=${encodeURIComponent(message)}`;
+        window.location.href = whatsappUrl;
+
+        setIsSubmitting(false);
+    };
+
     return (
         <>
             <section className="relative w-full aspect-video md:aspect-auto md:h-[100vh] bg-secondary text-center overflow-hidden">
@@ -278,34 +336,14 @@ const Contact = () => {
 
                             <div className="pt-6">
                                 <motion.button
-                                    whileHover={{ scale: 1.02, backgroundColor: "#B38F48" }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-primary text-white font-bold py-5 rounded-lg shadow-xl uppercase tracking-[0.2em] text-sm transition-all"
+                                    whileHover={isSubmitting ? undefined : { scale: 1.02, backgroundColor: "#B38F48" }}
+                                    whileTap={isSubmitting ? undefined : { scale: 0.98 }}
+                                    disabled={isSubmitting}
+                                    className="w-full bg-primary text-white font-bold py-5 rounded-lg shadow-xl uppercase tracking-[0.2em] text-sm transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                                     type="button"
-                                    onClick={() => {
-                                        const name = (document.getElementById('name') as HTMLInputElement).value;
-                                        const interestRadio = document.querySelector('input[name="interest"]:checked') as HTMLInputElement;
-                                        const interest = interestRadio ? interestRadio.value : '';
-
-                                        const date = (document.getElementById('date') as HTMLInputElement).value;
-                                        const time = (document.getElementById('time') as HTMLSelectElement).value;
-
-                                        if (!interest) {
-                                            alert("Please select an interested property.");
-                                            return;
-                                        }
-
-                                        if (!date || !time) {
-                                            alert("Please select both a date and time for your appointment.");
-                                            return;
-                                        }
-
-                                        const message = `Hi, I would like to book an appointment.\nName: ${name}\nInterest: ${interest}\nDate: ${date}\nTime: ${time}`;
-                                        const whatsappUrl = `https://wa.me/60165500271?text=${encodeURIComponent(message)}`;
-                                        window.open(whatsappUrl, '_blank');
-                                    }}
+                                    onClick={handleSubmit}
                                 >
-                                    Book Appointment Now
+                                    {isSubmitting ? 'Submitting...' : 'Book Appointment Now'}
                                 </motion.button>
                                 <p className="text-[0.65rem] text-center text-secondary/40 mt-6 leading-relaxed">
                                     By submitting, you will be redirected to WhatsApp to complete your booking.
