@@ -8,7 +8,7 @@ const features = [
         headline: 'Solar-Powered & EV-Ready',
         body: 'Pre-installed Solar PV Panels act as a roof shield, naturally lowering the temperature of your home while slashing your electricity bills. Paired with EV Isolators, your home becomes a high-value asset built for the future.',
         stat: 'Cut your electricity bills',
-        image: '/images/Solar Panels.JPG', // USER: Add your image path here (e.g., '/images/solar.jpg')
+        image: '/images/Solar Panels.JPG',
         bgColor: 'bg-orange-50',
         accentColor: 'text-orange-600',
         borderColor: 'border-orange-200',
@@ -22,7 +22,7 @@ const features = [
         headline: '4.5-Acres Versatile Park',
         body: 'Outside, we replaced hot, dangerous asphalt with a massive 4.5-Acres Versatile Park. Your children finally have a safe, shaded, and vibrant environment to run, breathe, and play — right outside your front door.',
         stat: '4.5 acres versatile park',
-        image: '/images/Park.JPG', // USER: Add your image path here
+        image: '/images/Park.JPG',
         bgColor: 'bg-green-50',
         accentColor: 'text-green-700',
         borderColor: 'border-green-200',
@@ -36,7 +36,7 @@ const features = [
         headline: 'Exclusive Guarded Community',
         body: 'Privacy and safety without the cage. Professional security for total peace of mind, ensuring your family\'s protection in a serene, well-managed environment. You choose who enters your world.',
         stat: 'professional security',
-        image: '/images/Guarded.jpg', // USER: Add your image path here
+        image: '/images/Guarded.jpg',
         bgColor: 'bg-blue-50',
         accentColor: 'text-blue-600',
         borderColor: 'border-blue-200',

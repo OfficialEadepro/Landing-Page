@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import LocationMap from './LocationMap';
+import { WHATSAPP_NUMBER } from '../siteConfig';
 
 const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJFQWHxq4_mBzG2gb89-wDJHfRR7nqM22yCh6XsJyX34MFXCBIC0NFTJ89JRuF6DKz4g/exec';
 
@@ -62,7 +63,7 @@ const Contact = () => {
         }
 
         const message = `Hi, I saw your landing page on Google and I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\nDate: ${date}\nTime: ${time}`;
-        const whatsappUrl = `https://wa.me/60165500271?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
         window.location.href = whatsappUrl;
 
         setIsSubmitting(false);

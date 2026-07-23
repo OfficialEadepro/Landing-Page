@@ -1,11 +1,5 @@
 import { motion } from 'framer-motion';
-
-const phones = [
-    { display: '+6016-5500 271', number: '+60165500271' },
-    { display: '+6016-5500 500', number: '+60165500500' },
-    { display: '+6012-3704 330', number: '+60123704330' },
-    { display: '+6016-5500 992', number: '+60165500992' },
-];
+import { PHONE_NUMBERS, WHATSAPP_NUMBER } from '../siteConfig';
 
 const Footer = () => {
     return (
@@ -62,7 +56,7 @@ const Footer = () => {
                         <div>
                             <h4 className="font-display font-bold text-primary text-lg mb-2">Phone:</h4>
                             <div className="flex flex-col gap-1">
-                                {phones.map(({ display, number }) => (
+                                {PHONE_NUMBERS.map(({ display, number }) => (
                                     <a
                                         key={number}
                                         href={`tel:${number}`}
@@ -101,7 +95,7 @@ const Footer = () => {
                         duration: 2,
                         repeat: Infinity
                     }}
-                    href={`https://wa.me/60165500271?text=${encodeURIComponent("Hi, I saw your landing page on Google and I'm interested in Klemeru")}`}
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I saw your landing page on Google and I'm interested in Klemeru")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5a] text-white p-4 rounded-full shadow-2xl transition-transform active:scale-95 hover:scale-110"
