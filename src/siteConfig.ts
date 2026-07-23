@@ -1,7 +1,7 @@
 // Change the phone / WhatsApp numbers here — the whole site updates from this file.
 
 // Main WhatsApp number (Book Appointment form + floating button). Digits only, no "+".
-export const WHATSAPP_NUMBER = '60165500271';
+export const WHATSAPP_NUMBER = '60123704330';
 
 // Footer phone list. display = shown on page, number = dialled on tap (keep the "+").
 export const PHONE_NUMBERS = [
