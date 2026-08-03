@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import LocationMap from './LocationMap';
-import { WHATSAPP_NUMBER } from '../siteConfig';
-
-const LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyJFQWHxq4_mBzG2gb89-wDJHfRR7nqM22yCh6XsJyX34MFXCBIC0NFTJ89JRuF6DKz4g/exec';
+import { BUDGET_OPTIONS, goToThankYou, sendLead } from '../leads';
 
 const packageItems = [
     'Wet kitchen cabinets',
@@ -21,6 +19,7 @@ const Contact = () => {
         const phone = (document.getElementById('phone') as HTMLInputElement).value.trim();
         const interestRadio = document.querySelector('input[name="interest"]:checked') as HTMLInputElement;
         const interest = interestRadio ? interestRadio.value : '';
+        const budget = (document.getElementById('budget') as HTMLSelectElement).value;
         const date = (document.getElementById('date') as HTMLInputElement).value;
         const time = (document.getElementById('time') as HTMLSelectElement).value;
 
@@ -39,6 +38,11 @@ const Contact = () => {
             return;
         }
 
+        if (!budget) {
+            alert("Please select your monthly installment budget.");
+            return;
+        }
+
         if (!date || !time) {
             alert("Please select both a date and time for your appointment.");
             return;
@@ -46,27 +50,16 @@ const Contact = () => {
 
         setIsSubmitting(true);
 
-        try {
-            const formData = new FormData();
-            formData.append('fullName', name);
-            formData.append('phoneNumber', phone);
-            formData.append('property', interest);
-            formData.append('preferredDate', date);
-            formData.append('preferredTime', time);
+        await sendLead({
+            fullName: name,
+            phoneNumber: phone,
+            property: interest,
+            monthlyBudget: budget,
+            preferredDate: date,
+            preferredTime: time,
+        });
 
-            await fetch(LEAD_ENDPOINT, {
-                method: 'POST',
-                body: formData,
-            });
-        } catch (error) {
-            console.error('Lead submission failed:', error);
-        }
-
-        const message = `Hi, I saw your landing page on Google and I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\nDate: ${date}\nTime: ${time}`;
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-        window.location.href = whatsappUrl;
-
-        setIsSubmitting(false);
+        goToThankYou('appointment_form', `Hi, I saw your landing page on Google and I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nInterest: ${interest}\nBudget: ${budget}\nDate: ${date}\nTime: ${time}`);
     };
 
     return (
@@ -284,6 +277,24 @@ const Contact = () => {
                                         </label>
                                     ))}
                                 </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, x: -10 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.35 }}
+                                className="space-y-1"
+                            >
+                                <label className="block text-xs font-bold text-secondary/60 uppercase tracking-widest ml-1" htmlFor="budget">Monthly Installment Budget</label>
+                                <select
+                                    className="block w-full rounded-lg border-secondary/20 bg-cream/50 text-secondary focus:border-primary focus:ring-primary py-4 px-5 text-sm transition-all focus:bg-white"
+                                    id="budget"
+                                >
+                                    <option value="">Select Budget</option>
+                                    {BUDGET_OPTIONS.map((budget) => (
+                                        <option key={budget} value={budget}>{budget}</option>
+                                    ))}
+                                </select>
                             </motion.div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

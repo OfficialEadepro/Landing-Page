@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    rollupOptions: {
+      // thank-you.html is a second standalone page — it is where the conversion tag fires.
+      input: {
+        main: 'index.html',
+        thankYou: 'thank-you.html',
+      },
+    },
+  },
 })

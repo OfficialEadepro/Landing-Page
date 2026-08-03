@@ -1,28 +1,26 @@
-
-
 import { motion } from 'framer-motion';
+import LeadForm from './LeadForm';
 
 const Hero = () => {
     return (
-        <div id="home" className="relative h-[100vh] w-full overflow-hidden">
+        <div id="home" className="relative w-full min-h-[100vh] overflow-hidden">
             <motion.img
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 src="/images/Park Header.webp"
                 alt="Klemeru Park Header"
-                className="w-full h-full object-cover object-[center_top] md:object-center block"
+                className="absolute inset-0 w-full h-full object-cover object-[center_top] md:object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/30 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/50 to-secondary/20"></div>
 
-            <div className="absolute inset-x-0 bottom-0 flex flex-col justify-end pb-10 md:pb-16 text-center items-center">
-                <div className="w-full max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-
+            <div className="relative min-h-[100vh] flex flex-col justify-end items-center px-4 sm:px-6 pt-36 pb-10 md:pt-40 md:pb-16">
+                <div className="w-full max-w-2xl text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-2xl md:text-5xl font-display font-bold text-white mb-4 leading-[1.1]"
+                        className="text-2xl md:text-4xl font-display font-bold text-white mb-2 leading-[1.1]"
                     >
                         Ipoh New Project — <span className="drop-shadow-lg">Klemeru</span>
                     </motion.h1>
@@ -30,7 +28,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-primary mb-8 font-display font-bold text-2xl md:text-4xl max-w-2xl mx-auto drop-shadow-lg"
+                        className="text-primary mb-6 font-display font-bold text-xl md:text-3xl drop-shadow-lg"
                     >
                         Upcoming New Township
                     </motion.h2>
@@ -38,14 +36,9 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="w-full max-w-sm"
+                        className="max-w-md mx-auto"
                     >
-                        <a
-                            href="#contact"
-                            className="bg-premium-sage hover:bg-[#7da878] text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-[1.05] active:scale-95 w-full uppercase tracking-wider text-sm flex items-center justify-center"
-                        >
-                            Make Appointment
-                        </a>
+                        <LeadForm />
                     </motion.div>
                 </div>
             </div>
@@ -54,4 +47,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

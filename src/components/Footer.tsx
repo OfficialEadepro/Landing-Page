@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PHONE_NUMBERS, WHATSAPP_NUMBER } from '../siteConfig';
+import { PHONE_NUMBERS } from '../siteConfig';
 
 const Footer = () => {
     return (
@@ -77,7 +77,7 @@ const Footer = () => {
                 </div>
             </motion.footer>
 
-            {/* WhatsApp Float Button */}
+            {/* WhatsApp Float Button — goes via the thank-you page, so an accidental tap is not counted as a conversion */}
             <motion.div
                 initial={{ scale: 0, rotate: -45 }}
                 animate={{ scale: 1, rotate: 0 }}
@@ -95,9 +95,8 @@ const Footer = () => {
                         duration: 2,
                         repeat: Infinity
                     }}
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi, I saw your landing page on Google and I'm interested in Klemeru")}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/thank-you.html?src=whatsapp_button"
+                    aria-label="Chat with us on WhatsApp"
                     className="flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5a] text-white p-4 rounded-full shadow-2xl transition-transform active:scale-95 hover:scale-110"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
