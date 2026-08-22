@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BUDGET_OPTIONS, PROPERTY_TYPES, goToThankYou, sendLead } from '../leads';
+import { BUDGET_OPTIONS, PROPERTY_TYPES, TIME_OPTIONS, goToThankYou, sendLead, todayIso } from '../leads';
 
 const fieldClass =
     'block w-full rounded-lg border border-secondary/20 bg-cream/60 text-secondary py-3 px-4 text-sm transition-all focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary';
@@ -9,6 +9,8 @@ const LeadForm = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [property, setProperty] = useState('');
     const [monthlyBudget, setMonthlyBudget] = useState('');
+    const [preferredDate, setPreferredDate] = useState('');
+    const [preferredTime, setPreferredTime] = useState('');
     const [error, setError] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,6 +33,14 @@ const LeadForm = () => {
             setError('Please select your monthly budget.');
             return;
         }
+        if (!preferredDate) {
+            setError('Please choose your preferred appointment date.');
+            return;
+        }
+        if (!preferredTime) {
+            setError('Please choose your preferred appointment time.');
+            return;
+        }
 
         setError('');
         setIsSubmitting(true);
@@ -40,16 +50,20 @@ const LeadForm = () => {
             phoneNumber: phoneNumber.trim(),
             property,
             monthlyBudget,
+            preferredDate,
+            preferredTime,
         };
 
         await sendLead(lead);
 
         goToThankYou('hero_lead_form', [
-            "Hi, I saw your landing page on Google and I'd like the Klemeru brochure and price list.",
+            "Hi, I saw your landing page on Google and I'd like the Klemeru brochure and to book an appointment.",
             `Name: ${lead.fullName}`,
             `Phone: ${lead.phoneNumber}`,
             `Interest: ${lead.property}`,
             `Budget: ${lead.monthlyBudget}`,
+            `Preferred Date: ${lead.preferredDate}`,
+            `Preferred Time: ${lead.preferredTime}`,
         ].join('\n'));
     };
 
@@ -60,7 +74,7 @@ const LeadForm = () => {
         >
             <div className="text-center mb-1">
                 <p className="font-display font-bold text-secondary text-lg leading-tight">
-                    Get Your Free Brochure &amp; Price List
+                    Get Your Free Brochure &amp; Make Appointment
                 </p>
                 <p className="text-secondary/60 text-xs mt-1">
                     Leave your details — our sales team will reach out shortly.
@@ -111,6 +125,41 @@ const LeadForm = () => {
                 ))}
             </select>
 
+            <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1">
+                    <label className="block text-[0.65rem] font-bold text-secondary/50 uppercase tracking-widest ml-1" htmlFor="hero-date">
+                        Preferred Date
+                    </label>
+                    <input
+                        className={fieldClass}
+                        id="hero-date"
+                        value={preferredDate}
+                        onChange={(event) => setPreferredDate(event.target.value)}
+                        type="date"
+                        min={todayIso()}
+                        aria-label="Preferred Date"
+                    />
+                </div>
+
+                <div className="space-y-1">
+                    <label className="block text-[0.65rem] font-bold text-secondary/50 uppercase tracking-widest ml-1" htmlFor="hero-time">
+                        Preferred Time
+                    </label>
+                    <select
+                        className={fieldClass}
+                        id="hero-time"
+                        value={preferredTime}
+                        onChange={(event) => setPreferredTime(event.target.value)}
+                        aria-label="Preferred Time"
+                    >
+                        <option value="">Select Time</option>
+                        {TIME_OPTIONS.map((time) => (
+                            <option key={time} value={time}>{time}</option>
+                        ))}
+                    </select>
+                </div>
+            </div>
+
             {error && <p className="text-xs text-red-600 font-medium">{error}</p>}
 
             <button
@@ -118,7 +167,7 @@ const LeadForm = () => {
                 disabled={isSubmitting}
                 className="w-full bg-premium-sage hover:bg-[#7da878] text-white font-bold py-4 rounded-lg shadow-lg uppercase tracking-[0.15em] text-sm transition-all active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
             >
-                {isSubmitting ? 'Submitting...' : 'Get Brochure Now'}
+                {isSubmitting ? 'Submitting...' : 'Get Brochure & Book Now'}
             </button>
 
             <p className="text-[0.65rem] text-center text-secondary/40 leading-relaxed">

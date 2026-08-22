@@ -22,13 +22,23 @@ export const PROPERTY_TYPES = [
 ];
 
 // Brackets follow the "Est. Installment From" prices shown in the Gallery section.
+// The cheapest unit starts at RM 1,588 / month, so there is no bracket below RM 1,600.
 export const BUDGET_OPTIONS = [
-    'Below RM 1,600 / month',
     'RM 1,600 - RM 2,100 / month',
     'RM 2,100 - RM 2,600 / month',
     'RM 2,600 - RM 3,500 / month',
     'Above RM 3,500 / month',
 ];
+
+// Appointment slots — shared by the hero lead form and the Book Appointment form.
+export const TIME_OPTIONS = [
+    '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
+    '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM',
+    '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM', '05:00 PM',
+];
+
+// Earliest date the visitor can pick, in the yyyy-mm-dd format a date input expects.
+export const todayIso = () => new Date().toISOString().split('T')[0];
 
 export type Lead = {
     fullName: string;

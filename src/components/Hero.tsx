@@ -8,8 +8,8 @@ const Hero = () => {
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                src="/images/Park Header.webp"
-                alt="Klemeru Park Header"
+                src="/images/Single Storey Header.webp"
+                alt="Klemeru Single-Storey Terrace"
                 className="absolute inset-0 w-full h-full object-cover object-[center_top] md:object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/50 to-secondary/20"></div>
