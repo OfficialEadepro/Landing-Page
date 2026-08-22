@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import LocationMap from './LocationMap';
 import { BUDGET_OPTIONS, TIME_OPTIONS, goToThankYou, sendLead, todayIso } from '../leads';
 
 const packageItems = [
@@ -187,8 +186,6 @@ const Contact = () => {
                     <p className="text-center text-xs text-secondary/40 mt-6">*Semi-furnished package subject to terms and conditions. Images are for illustration purposes only.</p>
                 </div>
             </section>
-
-            <LocationMap />
 
             <section id="contact" className="px-8 py-16 overflow-hidden">
                 <div className="max-w-xl mx-auto">

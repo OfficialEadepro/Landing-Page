@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
+import LocationMap from './components/LocationMap';
 import PainPoints from './components/PainPoints';
 import Features from './components/Features';
 import Contact from './components/Contact';
@@ -18,6 +19,7 @@ function App() {
       <Navbar />
       <Hero />
       <Gallery />
+      <LocationMap />
       <PainPoints />
       <Features />
       <Contact />
