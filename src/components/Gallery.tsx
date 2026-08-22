@@ -121,7 +121,7 @@ const Gallery = () => {
                             </div>
                             <div className="mt-3 pt-3 border-t border-secondary/10">
                                 <p className="text-[0.6rem] text-secondary/50 uppercase tracking-widest font-bold mb-0.5">Est. Installment From</p>
-                                <p className="text-primary font-display font-bold text-xl">RM 2,318 <span className="text-xs text-secondary/50 font-normal font-body">/month</span></p>
+                                <p className="text-primary font-display font-bold text-xl">RM 2,918 <span className="text-xs text-secondary/50 font-normal font-body">/month</span></p>
                             </div>
                         </div>
                     </motion.div>
